@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
             console.log(err);
-            res.status(500).jdon(err);
+            res.status(500).json(err);
         });
 });
 
@@ -99,7 +99,7 @@ router.post('/login', (req, res) => {
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
 
-            res.json({ user: dbUserData, message: 'You are now logged in!' });
+            res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
         });
     });
 });

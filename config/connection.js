@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 
 require('dotenv').config();
 
-// create connection to our database, pass in MySQL info for username/password
+// create connection to database, pass in MySQL info for username/password
 let sequelize;
 
 if (process.env.JAWSDB_URL) {
